@@ -29,15 +29,6 @@ def earliest_bus() -> int:
 #############PART 2##################
 #####################################
 
-def matching_step(t1: int, t2: int,gap: int,cpt: int = 1) -> int:
-
-    if ((t1 * cpt) + gap) % t2 == 0:
-        return (t1 * cpt)
-    else:
-        return matching_step(t1, t2, gap, cpt+1)
-
-
-
 def matching_list_position() -> int:
 
     buses = [x for x in bus_ids2 if type(x) is int]
