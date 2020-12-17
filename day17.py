@@ -23,16 +23,9 @@ def iter(on, ndim):
     return keep_on  | turn_on
 
 
-
-raw_data = open('day17.txt','r').readlines()
-ndim = 3
-on = make(raw_data, ndim)
-for _ in range(6):
-    on = iter(on, ndim)
-print(len(on))
-
-ndim = 4
-on = make(raw_data, ndim)
-for _ in range(6):
-    on = iter(on, ndim)
-print(len(on))
+def boot(ndim: int, cycles: int = 6):
+    with open('day17.txt','r').readlines() as inputs:
+        on = make(inputs, ndim)
+        for _ in range(cycles):
+            on = iter(on, ndim)
+    print(len(on))
