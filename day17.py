@@ -1,4 +1,4 @@
-
+from time import time
 from collections import Counter
 from itertools import product
 
@@ -24,8 +24,19 @@ def iter(on, ndim):
 
 
 def boot(ndim: int, cycles: int = 6):
-    with open('day17.txt','r').readlines() as inputs:
-        on = make(inputs, ndim)
-        for _ in range(cycles):
-            on = iter(on, ndim)
+    inputs = open('day17.txt', 'r').readlines()
+    on = make(inputs, ndim)
+    for _ in range(cycles):
+        on = iter(on, ndim)
     print(len(on))
+
+
+if __name__ == "__main__":
+    t_start = time()
+    boot(3)
+    print("temps d'execution avec dim=3: "+str(time()-t_start))
+
+    t_start = time()
+    boot(4)
+    print("temps d'execution avec dim=4: " + str(time() - t_start))
+
