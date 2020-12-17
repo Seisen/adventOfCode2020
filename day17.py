@@ -73,7 +73,7 @@ def boot_process(cycle: int = 0, cyles: int = 6, cubes: list = initial_state()):
                     elif cpt_active_neighbor == 3:
                         cubes.append([x, y, z])
 
-        cubes = [[x + 1, y + 1, z + 1] for x, y, z in cubes]
+        #cubes = [[x + 1, y + 1, z + 1] for x, y, z in cubes]
         boot_process(cycle+1, cyles, cubes)
 
     else:
