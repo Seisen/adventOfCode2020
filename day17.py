@@ -58,10 +58,8 @@ def boot_process(cycle: int = 0, cyles: int = 6, cubes: list = initial_state()):
     :param cubes: list of active cubes
     :return: len of cubes
     """
-    x_max, y_max, z_max = find_max(0, cubes), find_max(1, cubes), find_max(2, cubes)
-
-
     if cycle <= cyles:
+        x_max, y_max, z_max = find_max(0, cubes), find_max(1, cubes), find_max(2, cubes)
         for x in range(-x_max, x_max):
             for y in range(-y_max, y_max):
                 for z in range(-z_max, z_max):
@@ -75,7 +73,7 @@ def boot_process(cycle: int = 0, cyles: int = 6, cubes: list = initial_state()):
                     elif cpt_active_neighbor == 3:
                         cubes.append([x, y, z])
 
-        #cubes = [[x + 1, y + 1, z + 1] for x, y, z in cubes]
+        cubes = [[x + 1, y + 1, z + 1] for x, y, z in cubes]
         boot_process(cycle+1, cyles, cubes)
 
     else:
